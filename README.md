@@ -13,7 +13,7 @@ netsh wlan export profile key=clear
 ```
 
 
-Lo que deja ver las ###redes wifi _guardadas en el dispositivo_ en el que se ejecuta el programa.
+Lo que deja ver las **redes wifi _guardadas en el dispositivo_ en el que se ejecuta el programa**.
 Después crea un archivo .xml por cada wifi, el programa encuentra en ese archivo las redes que tienen la contraseña visible y pasa toda esa informacion a una base de datos de firebase.
 
 ```python
