@@ -1,2 +1,2 @@
 # Python-Wi-Fi
-Get Wi-Fi passwords
+Obtener contraseñas Wi-Fi
